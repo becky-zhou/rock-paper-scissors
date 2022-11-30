@@ -1,3 +1,68 @@
+var userInput = prompt("Please choose from rock, paper, or scissors.")
+
+function getUserChoice(userInput) { 
+    userInput = userInput.toLowerCase(); 
+    if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors' || userInput === 'bomb') {
+        return userInput; 
+    } else {
+        return 'You have enter an invaild input';  
+    }
+};
+
+
+function getComputerChoice() {
+    let num1 = Math.floor(Math.random() * 3);
+    if (num1 === 0) {
+        return 'rock'; 
+    } else if (num1 === 1) {
+        return 'paper'; 
+    } else {
+        return 'scissors'; 
+    }
+}
+
+function determineWinner(userChoice, computerChoice) {
+    if (userChoice === 'bomb') {
+        return 'YOU WON!'
+    } else if (userChoice === computerChoice) {
+        return 'Tied'; 
+    } else if (userChoice === 'paper'){
+            if (computerChoice === 'rock') { 
+                return 'U won!';
+            } else {
+                return 'U LOST!';
+            } 
+    } else if (userChoice === 'rock') {
+            if (computerChoice === 'paper') {
+                return 'YOU LOSE!'; 
+            } else {
+                return 'You won... FOR NOW!'; 
+            }
+    } else {
+        if (computerChoice === 'rock') {
+            return 'You LOSE!'; 
+        } else {
+            return 'You won...'; 
+        }
+    }
+}; 
+
+
+
+
+function playGame() {
+    userChoice = getUserChoice(userInput); 
+    computerChoice = getComputerChoice(); 
+    console.log(userInput); 
+    console.log(computerChoice); 
+    console.log(determineWinner(userChoice, computerChoice)); 
+ };
+
+
+ playGame(); 
+
+
+/*
 //var userInput = prompt("Please choose from rock, paper, or scissor.")
 userInput = ''; 
 function getUserChoice(userInput) { 
@@ -21,7 +86,11 @@ function getComputerChoice() {
     }
 }
 
-function determineWinner(userChoice, computerChoice) {
+// inside the function, I should have pass in the parameters
+//do not use console.log, use return 
+//test functions before moving on (on the website console) 
+//log out each player's choice to see if everything is working properly
+function determineWinner(userChoice, computerChoice) { 
     if (getUserChoice(userInput) === 'bomb') {
         console.log('YOU WON!')
     } else if (getUserChoice(userInput) === getComputerChoice ()) {
@@ -58,4 +127,5 @@ function playGame() {
  };
 
 
+*/
 
