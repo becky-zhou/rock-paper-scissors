@@ -5,7 +5,7 @@ function getUserChoice(userInput) {
     if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors' || userInput === 'bomb') {
         return userInput; 
     } else {
-        return console.log('You have enter an invaild input');  
+        return 'You have enter an invaild input';  
     }
 };
 
@@ -13,11 +13,11 @@ function getUserChoice(userInput) {
 function getComputerChoice() {
     let num1 = Math.floor(Math.random() * 3);
     if (num1 === 0) {
-        console.log('rock'); 
+        return 'rock'; 
     } else if (num1 === 1) {
-        console.log('paper'); 
+        return 'paper'; 
     } else {
-        console.log('scissors'); 
+        return 'scissors'; 
     }
 }
 
